@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Anfahrt - Bytebruger</title>
+    <!-- Tab icon for multiple platforms -->
+    <link rel="icon" type="image/png" href="assets/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="shortcut icon" href="assets/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+    <link rel="manifest" href="assets/site.webmanifest" />
+    <link rel="stylesheet" href="./css/style.css">
+ 
+    <style>
+        .anfahrt-oeffnung {
+            display: flex;
+            gap: 1px;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin: 5px 0;
+            justify-content: center;
+            flex-wrap: wrap; 
+        }
+        
+        .oeffnung, .anfahrt {
+            flex: 1;
+            display: flex;
+            flex-direction: column; 
+        }
+        
+        .oeffnungszeiten-tabelle, .adresse-tabelle {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+        
+        .oeffnungszeiten-tabelle td, .adresse-tabelle td {
+            padding: 5px 5px 1px 1px;
+            /* vertical-align: top; */
+            text-align: left;
+        }
+        
+        .oeffnungszeiten-tabelle td:first-child {
+            font-weight: bold;
+            text-align: right;
+            width: 30%;
+        }
+        
+        .oeffnungszeiten-tabelle td:last-child, .adresse-tabelle td {
+            text-align: left;
+        }
+        
+        .adresse-tabelle td:first-child {
+            font-weight: bold;
+        }
+
+        .begruessung-title {
+            font-family: Arial, sans-serif;
+            display: flex;
+            text-transform: uppercase;
+            font-size: 24px;
+            color: #28a745;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .zelle-title {
+            text-transform: uppercase;
+            font-size: 24px;
+            color: #28a745;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .iframe {
+            position: relative;
+            overflow: hidden;
+            padding-bottom: 40%;
+            height: 100%;
+            margin-bottom: 1%;
+        }
+
+        .iframe iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .cashier {
+            max-width: 95%;
+            max-height: 75vh;
+        }
+
+        .section-title {
+            text-transform: uppercase;
+            font-size: 24px;
+            color: #28a745;
+            font-weight: bold;
+            margin-bottom: 20px;
+            max-width: 95%;
+        }
+
+        .title {
+            text-transform: uppercase;
+            font-size: 18px;
+            color: #28a745;
+            font-weight: normal;
+            margin-bottom: 20px;
+            max-width: 95%;
+        }
+
+        .values {
+            background-color: #f8f9fa;
+            padding: 40px 20px;
+            border-radius: 10px;
+            max-width: 95%;
+        }
+
+        .values ul {
+            padding-left: 0;
+            list-style: none;
+            max-width: 95%;
+        }
+
+        .values li {
+            margin-bottom: 15px;
+            max-width: 95%;
+        }
+        
+    
+        @media (max-width: 768px) {
+            .anfahrt-oeffnung {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .oeffnung, .anfahrt {
+                width: 60%;
+            }
+        
+            .oeffnungszeiten-tabelle, .adresse-tabelle {
+                font-size: 14px;
+            }
+        
+            .section-title {
+                font-size: 14px; 
+        }
+        
+        @media (max-width: 480px) {
+            .oeffnungszeiten-tabelle td:first-child {
+                text-align: left; 
+            }
+        
+            .oeffnungszeiten-tabelle td:last-child, .adresse-tabelle td {
+                font-size: 13px; 
+            }
+        
+            .section-title {
+                font-size: 18px; 
+                text-align: left; 
+            }
+        }
+    }
+    </style>
+    
+    
+</head>
+
+ <!-- NavBar -->
+<nav id="header">
+
+</nav>
+
+<!-- Hero -->
+<header id="hero">
+ 
+</header>
+    <div class="container">
+        <section>
+            <div class="anfahrt-oeffnung">
+                <!-- Öffnungszeiten -->
+                <div class="oeffnung">
+                    <table class="oeffnungszeiten-tabelle"> 
+                        <td class="section-title"><u>Öffnungszeiten</u></td>
+                        <tr>
+                            <td class="section-title">MO - FR:</td>
+                            <td><strong>8 - 20 Uhr</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="section-title">SA:</td>
+                            <td><strong>10 - 18 Uhr</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="section-title">SO:</td>
+                            <td><strong>Geschlossen</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="section-title">Telefon:</td>
+                            <td><strong>0800 123 456</strong></td>
+                        </tr>
+                    </table>
+                </div>
+            
+                <!-- Anfahrt -->
+                <div class="anfahrt">
+                    <table class="adresse-tabelle">
+                        <tr>
+                            <td class="section-title"><u>Anfahrt</u></td>
+                        </tr>
+                        <tr>
+                            <td>Unterwerkstraße 5</td>
+                        </tr>
+                        <tr>
+                            <td>79115 Freiburg im Breisgau</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="iframe">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2569.7212694388727!2d7.8268991761135975!3d47.98350906187495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47911c993c0378e7%3A0xed55c009e90b7929!2sGFN!5e1!3m2!1sde!2sde!4v1732006251699!5m2!1sde!2sde"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> <br>
+            </div>
+            
+        </section>
+         <br>
+         <br>
+         <br>
+         <div class="container-fluid mb-0"> <h4 class="begruessung-title section my-4">Wir Freuen uns auf Ihren Besuch!</h4></div>
+         <div class="container-fluid pb-4">
+            <img src="assets/laden.jpg" alt="Laden" class="img-fluid">
+        </div>
+    </div>
+
+<!-- Footer -->
+<footer id="footer">
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/footerHeader.js"></script>
+<script src="js/shoppingCard.js"></script>
+<script src="js/hero.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Oh-No What happend?</title>
+  <link href="css/styles.css" rel="stylesheet" />
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+  #layoutError {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+</style>
+<body onload="redirectAfter5Seconds()">
+<div id="layoutError">
+  <div id="layoutError_content">
+    <main>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <div class="text-center mt-4">
+              <img class="mb-4 img-error" src="assets/OhNo.gif" />
+              <p class="lead">Irgendwas ist schief gelaufen!</p>
+              <a href="index.html">
+                <i class="fas fa-arrow-left me-1"></i>
+                Zurück zur Startseite
+              </a>
+              <div class="text-muted">
+                Oben klicken wenn die automatische Weiterleitung nicht funktioniert.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer id="footer" style="bottom:0px;">
+
+  </footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="js/scripts.js"></script>
+<script src="js/footerHeader.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+  function redirectAfter5Seconds() {
+    setTimeout(function() {
+      window.location.replace("index.html");
+    }, 10000); // 5000 milliseconds = 5 seconds | 10000 = 10 Sec
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input - ByteBurger</title>
+        <!-- Tab icon for multiple platforms -->
+        <link rel="icon" type="image/png" href="assets/favicon-96x96.png" sizes="96x96"/>
+        <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+        <link rel="shortcut icon" href="assets/favicon.ico"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png"/>
+        <link rel="manifest" href="assets/site.webmanifest"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+            th, td {
+                padding: 12px;
+                border: 1px solid #ddd;
+                text-align: left;
+            }
+            th {
+                background-color: #f4f4f4;
+            }
+            input[type="text"], input[type="number"], select {
+                width: 95%;
+                padding: 8px;
+                margin: 5px 0;
+            }
+            form {
+                margin: 20px;
+            }
+            .button-container {
+                margin-top: 10px;
+            }
+            button {
+                padding: 10px 15px;
+                margin-right: 10px;
+                background-color: #007BFF;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+            button.delete {
+                background-color: #DC3545;
+            }
+            button:hover {
+                opacity: 0.9;
+            }
+        </style>
+    </head>
+    <body>
+    <!-- Nav-Bar -->
+        <nav id="header">
+
+        </nav>
+
+    <!-- Input-Form -->
+    <form action="db_modify.php" method="POST">
+        <table>
+            <thead>
+                <tr>
+                    <th>Feld</th>
+                    <th>Eingabe</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><label for="ProductName">Bezeichnung des Produkts:</label></td>
+                    <td><input type="text" id="ProductName" name="ProductName" value="Produkt Name"></td>
+                </tr>
+                <tr>
+                    <td><label for="CategoryID">KategorieID des Produkts:</label></td>
+                    <td><input type="number" id="CategoryID" name="CategoryID" value="CategoryID als Zahl"></td>
+                </tr>
+                <tr>
+                    <td><label for="QuantityPerUnit">Einheitengröße:</label></td>
+                    <td><input type="text" id="QuantityPerUnit" name="QuantityPerUnit" value="QuantityPerUnit"></td>
+                </tr>
+                <tr>
+                    <td><label for="UnitPrice">Einzelpreis des Produkts:</label></td>
+                    <td><input type="number" id="UnitPrice" name="UnitPrice" step="0.01" value="Preis als '0.00'"></td>
+                </tr>
+                <tr>
+                    <td><label for="UnitsInStock">Lagerbestand:</label></td>
+                    <td><input type="number" id="UnitsInStock" name="UnitsInStock" value="UnitsInStock"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="button-container">
+            <button type="submit" name="submit" value="add">Hinzufügen</button>
+            <button type="submit" name="submit" value="edit">Ändern</button>
+            <button type="submit" name="submit" value="delete" class="delete">Löschen</button>
+        </div>
+    </form>
+
+    <!-- Footer -->
+    <footer id="footer">
+
+    </footer>
+<script></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/footerHeader.js"></script>
+<script src="js/shoppingCard.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
