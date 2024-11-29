@@ -3,13 +3,13 @@
 include_once("./php/mysql.php");
 global $conn;
 
-// Get-Werte
+// $_POST Array
 $productID = $_POST['ProductID'] ?? null;
 $productName = $_POST['ProductName'] ?? null;
 $categoryID = $_POST['CategoryID'] ?? null;
 $QuantityPerUnit = $_POST['QuantityPerUnit'] ?? null;
 $price = $_POST['UnitPrice'] ?? null;
-$UnitsInStock = $_POST['UnitsInUnitsInStock'] ?? null;
+$UnitsInStock = $_POST['UnitsInStock'] ?? null;
 $action = $_POST['submit'] ?? null;
 
 // Switch-Case was gemacht werden soll
