@@ -1,8 +1,10 @@
 <?php
+// Connection dür db gerufen
 include_once("./php/mysql.php");
 global $conn;
 
 // Get-Werte
+$productID = $_POST['ProductID'] ?? null;
 $productName = $_POST['ProductName'] ?? null;
 $categoryID = $_POST['CategoryID'] ?? null;
 $QuantityPerUnit = $_POST['QuantityPerUnit'] ?? null;
@@ -14,10 +16,10 @@ $action = $_POST['submit'] ?? null;
 switch ($action) {
     case "add":
         // Hinzufügen 
-        $sql = "INSERT INTO Products (ProductName, CategoryID, QuantityPerUnit, UnitPrice, UnitsInStock) 
-                VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO Products (ProductID, ProductName, CategoryID, QuantityPerUnit, UnitPrice, UnitsInStock) 
+                VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sisdi", $productName, $categoryID, $QuantityPerUnit, $price, $UnitsInStock);
+        $stmt->bind_param("isisdi", $productID, $productName, $categoryID, $QuantityPerUnit, $price, $UnitsInStock);
 
         if ($stmt->execute()) {
             echo "Produkt erfolgreich hinzugefügt.";
@@ -34,9 +36,9 @@ switch ($action) {
                 QuantityPerUnit = ?, 
                 UnitPrice = ?, 
                 UnitsInStock = ? 
-                WHERE ProductName = ?";
+                WHERE ProductID = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("isdis", $categoryID, $QuantityPerUnit, $price, $UnitsInStock, $productName);
+        $stmt->bind_param("isdis",  $categoryID, $QuantityPerUnit, $price, $UnitsInStock, $productName);
 
         if ($stmt->execute()) {
             echo "Produkt erfolgreich geändert.";
@@ -48,9 +50,9 @@ switch ($action) {
 
     case "delete":
         // Löschen
-        $sql = "DELETE FROM Products WHERE ProductName = ?";
+        $sql = "DELETE FROM Products WHERE ProductID = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("s", $productName);
+        $stmt->bind_param("i", $productID);
 
         if ($stmt->execute()) {
             echo "Produkt erfolgreich gelöscht.";
